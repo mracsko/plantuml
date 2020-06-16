@@ -1,0 +1,6 @@
+!$Background01 = "#808080"
+!$Background02 = "#FFFFFF"
+
+!$Red = "#FF0000"
+
+skinparam backgroundColor $Background01

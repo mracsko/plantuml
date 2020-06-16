@@ -1,0 +1,37 @@
+plugins {
+    id 'base'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    plantUml
+}
+
+dependencies {
+    plantUml 'net.sourceforge.plantuml:plantuml:1.2020.13'
+}
+
+task plantUmlCheck(type: JavaExec) {
+    group = "PlantUML"
+    description = "Check if GraphViz available for PlantUML."
+    classpath configurations.plantUml
+    main = "net.sourceforge.plantuml.Run"
+    args "-testdot"
+}
+
+task plantUml(type: JavaExec) {
+    group = "PlantUML"
+    description = "Generate diagrams from PlantUML files."
+    classpath configurations.plantUml
+    main = "net.sourceforge.plantuml.Run"
+    args "-config", "$projectDir/src/config/design.puml", "-o", "$buildDir", "$projectDir/src/diagram"
+}
+
+tasks["plantUml"].dependsOn("plantUmlCheck")
+tasks["build"].dependsOn("plantUml")
