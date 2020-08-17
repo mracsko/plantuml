@@ -4,8 +4,7 @@ PlantUML example using Gradle to generate diagrams.
 ## Usage
 Clone the repository and add PlantUML diagrams in the `src/diagram` directory, where you can already find some examples. The `src/config/design.puml` file contains an example how to create custom design file (colors, fonts, etc.), that is automatically applied to all of your diagrams.  
 
-**Requires [Graphviz ](https://graphviz.org/) installation to use all features.** Further info can be found here:
-[PlantUML Getting Started](https://plantuml.com/starting)
+**Requires [Graphviz ](https://graphviz.org/) installation to use all features. Latest package can be downloaded from [Graphviz download page](https://graphviz.org/download/).** Further info can be found here: [PlantUML Getting Started](https://plantuml.com/starting)
 
 Run: `gradlew clean build` (Windows) or `./gradlew clean build` (Linux)
 
@@ -63,3 +62,5 @@ task plantUmlCheck(type: JavaExec) {
     args "-testdot"
 }
 ```
+## Source
+Example project cloned from: https://github.com/mracsko/plantuml
