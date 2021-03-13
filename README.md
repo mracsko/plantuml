@@ -40,3 +40,8 @@ task plantUml(type: JavaExec) {
 	...
 }
 ```
+
+After this change you can remove the `src/config/design.puml` file.
+
+## Source
+Example project cloned from: https://github.com/mracsko/plantuml
